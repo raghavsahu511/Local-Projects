@@ -1,0 +1,237 @@
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width:70%;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    color:#10131a;
+}
+
+h2{
+    color:#2a5298;
+}
+
+input[type=file]{
+    width:100%;
+    padding:10px;
+    margin:15px 0;
+}
+
+textarea{
+    width:100%;
+    height:180px;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+button{
+    background:#1e3c72;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#2a5298;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin-top:20px;
+    box-shadow:0px 5px 20px rgba(0,0,0,.15);
+
+    animation:slideUp .8s ease;
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.score{
+    font-size:28px;
+    font-weight:bold;
+    color:green;
+}
+
+.shortlisted{
+    color:green;
+    font-weight:bold;
+    font-size:22px;
+}
+
+.rejected{
+    color:red;
+    font-weight:bold;
+    font-size:22px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#1e3c72;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0f172a;
+    padding:15px 40px;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.navbar a:hover{
+    color:#38bdf8;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.progress{
+    width:100%;
+    height:25px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    color:white;
+    text-align:center;
+    line-height:25px;
+    font-weight:bold;
+}
+
+.high{
+    width:90%;
+    background:green;
+}
+
+.medium{
+    width:70%;
+    background:orange;
+}
+
+.low{
+    width:40%;
+    background:red;
+}
+
+.skill-badge{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    padding:5px 10px;
+    margin:3px;
+    border-radius:15px;
+    font-size:12px;
+}
+
+.download-btn{
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.download-btn:hover{
+    background:#15803d;
+}
+
+details{
+    cursor:pointer;
+}
+
+pre{
+    white-space:pre-wrap;
+    max-height:200px;
+    overflow:auto;
+    font-size:12px;
+}
+
+.dashboard{
+    display:flex;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.dashboard-card{
+    flex:1;
+    text-align:center;
+    padding:20px;
+    border-radius:12px;
+    background:white;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-5px);
+}
+
+.dashboard-card h3{
+    margin-bottom:10px;
+    color:#2563eb;
+}
+
+.dashboard-card p{
+    font-size:24px;
+    font-weight:bold;
+}

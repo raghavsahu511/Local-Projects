@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysis Results</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="{{ url_for('static', filename='logo.png') }}"
+          alt="AI Recruitment Portal Logo"
+          height="50"
+        />
+        <span>AI Recruitment Portal</span>
+      </div>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Candidates</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="dashboard">
+        <div class="card dashboard-card">
+          <h3>Total Resumes</h3>
+          <p>{{ results|length }}</p>
+        </div>
+        <div class="card dashboard-card">
+          <h3>Top Candidate</h3>
+          <p>{{ results[0].name }}</p>
+        </div>
+        <div class="card dashboard-card">
+          <h3>Highest Score</h3>
+          <p>{{ results[0].ranking }}%</p>
+        </div>
+      </div>
+      <h2>Resume Analysis Results</h2>
+      <div class="card">
+        <h2>🏆 Candidate Rankings</h2>
+        <table border="1">
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Match %</th>
+            <th>Ranking Score</th>
+            <th>Skills</th>
+            <th>Resume Preview</th>
+            <th>Status</th>
+            <th>Missing Skills</th>
+          </tr>
+          {% for r in results %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ r.name }}</td>
+            <td>{{ r.category }}</td>
+            <td>
+              <div class="progress">
+                <div class="progress-fill {{ r.bar_class }}">
+                  {{ r.match }}%
+                </div>
+              </div>
+            </td>
+            <td>{{ r.ranking }}</td>
+            <td>
+              {% for skill in r.skills.split(', ') %}
+
+              <span class="skill-badge"> {{ skill }} </span>
+
+              {% endfor %}
+            </td>
+            <td>
+              <details>
+                <summary>View Resume</summary>
+                <pre>{{ r.preview }}</pre>
+              </details>
+            </td>
+            <td>{{ r.status }}</td>
+            <td>{{ r.missing }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <br />
+        <a href="/download">
+          <button class="download-btn">Download Excel Report</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

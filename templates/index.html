@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Resume Screening System</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="{{ url_for('static', filename='logo.png') }}"
+          alt="AI Recruitment Portal Logo"
+          height="50"
+        />
+        <span>AI Recruitment Portal</span>
+      </div>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Candidates</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h1>AI Resume Screening and Matching System</h1>
+      <form action="/analyze" method="POST" enctype="multipart/form-data">
+        <label>Job Description</label><br />
+        <textarea
+          id="jobdesc"
+          name="jobdesc"
+          rows="10"
+          cols="80"
+          placeholder="Paste the job description here"
+        ></textarea>
+        <br /><br />
+        <label for="resumes">Upload Resumes</label><br />
+        <input
+          id="resumes"
+          type="file"
+          name="resumes"
+          multiple
+          title="Select one or more resume files"
+        />
+        <br /><br />
+        <button type="submit">Analyze Resumes</button>
+      </form>
+    </div>
+  </body>
+</html>
